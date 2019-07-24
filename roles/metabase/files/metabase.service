@@ -1,0 +1,16 @@
+[Unit]
+Description=Metabase applicaion service
+Documentation=https://www.metabase.com/docs/latest
+
+[Service]
+WorkingDirectory=/data/wwwroot/metabase
+EnvironmentFile=/data/wwwroot/metabase/metabase.conf
+ExecStart=/usr/bin/java -jar metabase.jar
+User=metabase
+Group=metabase
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
