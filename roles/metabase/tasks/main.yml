@@ -17,7 +17,6 @@
     group: metabase
     
 
-
 - name: Download metabase
   get_url:
     dest: /data/wwwroot/metabase
