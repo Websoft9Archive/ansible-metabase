@@ -62,14 +62,22 @@
     export MB_DB_PORT=3306
     export MB_DB_USER=metabase
     export MB_DB_PASS=websoft9
-    java -jar metabase.jar migrate release-locks
+    java -jar metabase.jar &
   args:
     chdir: /data/wwwroot/metabase/
 
-- name: Start metabase
+- name: wait...
+  wait_for:
+    port: 3000  
+
+- name: kill JAVA and metabase
+  shell: killall java
+
+
+- name: Restart metabase
   service:
     name: metabase.service
-    state: started
+    state: restarted
     enabled: yes
 
 
