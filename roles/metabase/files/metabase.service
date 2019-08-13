@@ -9,8 +9,9 @@ ExecStart=/usr/bin/java -jar metabase.jar
 User=metabase
 Group=metabase
 Type=simple
-Restart=on-failure
-RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=metabase
 
 [Install]
 WantedBy=multi-user.target
