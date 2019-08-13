@@ -24,27 +24,7 @@
     owner: metabase
     group: metabase
 
-- name: Set metabase config
-  template:
-    src: metabase.conf.jinja2
-    dest: /data/wwwroot/metabase/metabase.conf
 
-- name: Setting metabase service
-  copy:
-    src: metabase.service
-    dest: /lib/systemd/system/metabase.service
-
-- name:  migrate release-locks
-  shell: java -jar metabase.jar migrate release-locks
-  args:
-    chdir: /data/wwwroot/metabase/
-
-- name: Start metabase
-  service:
-    name: metabase.service
-    state: started
-    enabled: yes
-    
 - name: Get MySQL root Default Password
   shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
   register: mysql_password 
@@ -64,6 +44,29 @@
       password: "{{metabase_db_password}}" 
       priv: '{{metabase_db_name}}.*:ALL'
       host: localhost
+
+- name: Set metabase config
+  template:
+    src: metabase.conf.jinja2
+    dest: /data/wwwroot/metabase/metabase.conf
+
+- name: Setting metabase service
+  copy:
+    src: metabase.service
+    dest: /lib/systemd/system/metabase.service
+
+# - name:  migrate release-locks
+#   shell: java -jar metabase.jar migrate release-locks
+#   args:
+#     chdir: /data/wwwroot/metabase/
+
+- name: Start metabase
+  service:
+    name: metabase.service
+    state: started
+    enabled: yes
+
+
 
 
 - name: set reverse porxy
