@@ -49,30 +49,13 @@
   template:
     src: metabase.conf.jinja2
     dest: /data/wwwroot/metabase/metabase.conf
+    owner: metabase
+    group: metabase
 
 - name: Setting metabase service
   copy:
     src: metabase.service
     dest: /lib/systemd/system/metabase.service
-
-- name:  migrate release-locks
-  shell: | 
-    export MB_DB_TYPE=mysql
-    export MB_DB_DBNAME=metabase
-    export MB_DB_PORT=3306
-    export MB_DB_USER=metabase
-    export MB_DB_PASS=websoft9
-    java -jar metabase.jar &
-  args:
-    chdir: /data/wwwroot/metabase/
-
-- name: wait...
-  wait_for:
-    port: 3000  
-
-- name: kill JAVA and metabase
-  shell: killall java
-
 
 - name: Restart metabase
   service:
