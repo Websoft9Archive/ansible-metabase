@@ -55,18 +55,22 @@
     src: metabase.service
     dest: /lib/systemd/system/metabase.service
 
-# - name:  migrate release-locks
-#   shell: java -jar metabase.jar migrate release-locks
-#   args:
-#     chdir: /data/wwwroot/metabase/
+- name:  migrate release-locks
+  shell: | 
+    export MB_DB_TYPE=mysql
+    export MB_DB_DBNAME=metabase
+    export MB_DB_PORT=3306
+    export MB_DB_USER=metabase
+    export MB_DB_PASS=websoft9
+    java -jar metabase.jar migrate release-locks
+  args:
+    chdir: /data/wwwroot/metabase/
 
 - name: Start metabase
   service:
     name: metabase.service
     state: started
     enabled: yes
-
-
 
 
 - name: set reverse porxy
