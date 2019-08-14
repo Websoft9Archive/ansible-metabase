@@ -63,10 +63,11 @@
     state: restarted
     enabled: yes
 
-- name:  wait for metabase setup
+- name:  wait for metabase setup (about 5min)
   wait_for:
     port: 3000
-    delay: 60
+    delay: 300
+    timeout: 600
   
 
 - name: set reverse porxy
