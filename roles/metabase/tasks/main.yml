@@ -1,28 +1,28 @@
-- name: Install openjdk
-  apt:
-    name: openjdk-11-jdk
+# - name: Install openjdk
+#   apt:
+#     name: openjdk-11-jdk
 
-- name: Create metabase User
-  user:
-    name: metabase
-    shell: /usr/sbin/nologin
-    home: /data/wwwroot/metabase
-    create_home: no
+# - name: Create metabase User
+#   user:
+#     name: metabase
+#     shell: /usr/sbin/nologin
+#     home: /data/wwwroot/metabase
+#     create_home: no
 
-- name: Create metabase directory
-  file:
-    path: /data/wwwroot/metabase
-    state: directory
-    owner: metabase
-    group: metabase
+# - name: Create metabase directory
+#   file:
+#     path: /data/wwwroot/metabase
+#     state: directory
+#     owner: metabase
+#     group: metabase
     
 
-- name: Download metabase
-  get_url:
-    dest: /data/wwwroot/metabase
-    url: http://downloads.metabase.com/v0.32.9/metabase.jar
-    owner: metabase
-    group: metabase
+# - name: Download metabase
+#   get_url:
+#     dest: /data/wwwroot/metabase
+#     url: http://downloads.metabase.com/v0.32.9/metabase.jar
+#     owner: metabase
+#     group: metabase
 
 
 - name: Get MySQL root Default Password
@@ -40,6 +40,7 @@
   mysql_user:
       login_password: "{{mysql_password.stdout}}"
       login_user: root 
+      login_unix_socket: /var/run/mysqld/mysqld.sock
       name: "{{metabase_db_user}}" 
       password: "{{metabase_db_password}}" 
       priv: '{{metabase_db_name}}.*:ALL'
