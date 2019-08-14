@@ -43,7 +43,6 @@
       name: "{{metabase_db_user}}" 
       password: "{{metabase_db_password}}" 
       priv: '{{metabase_db_name}}.*:ALL'
-      host: localhost
 
 - name: Set metabase config
   template:
