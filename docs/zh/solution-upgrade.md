@@ -1,47 +1,35 @@
 # 升级
 
-The complete upgrade of this Image includes: Operating System patch upgrade, Running Environment patch vulnerability upgrade and OwnCloud upgrade three parts
+Metabase完整的升级包括：操作系统补丁升级、运行环境补丁漏洞升级和应用程序升级三个部分
 
-> Website technology is changing with each passing day. Updates and upgrades are one of the maintenance tasks. Programs that are not upgraded for a long time, like buildings that are not maintained for a long time, will accelerate aging and gradually lose functionality until they are unavailable.
+> 网站技术日新月异，更新升级是维护工作之一，长时间不升级的程序，就如长时间不维护的建筑物一样，会加速老化、功能逐渐缺失直至无法使用。
 
+## 操作系统&运行环境升级
 
-Start any upgrade,you should complete the backup first
+Websoft9提供的镜像（Linux版）会自动完成操作系统和运行环境的升级，用户只需关注网站的升级。
 
-<a name="88cf1437"></a>
-## Operating System &  running environmen Upgrade
+若计划立即进行升级，请使用WinSCP的终端窗口运行一条升级命令：
 
-If you are using the Zentao on Linux Image of us,upgrade is very simple,just only one command
-```shell
+``` shell
+#For Ubuntu
+apt update && apt upgrade -y
+
+#For Centos&Redhat
 yum update -y
 ```
 
-<a name="18a6c2f4"></a>
-## OwnCloud Upgrade
+## Metabase升级
 
-OwnCloud provides a very user-friendly upgrade (update) portal, which can complete the update of the main version and APP plug-in according to the update prompt of the system.
+Metabase有升级包的时候，后台会及时给出提示。参考下面的步骤完成升级：
 
-<a name="VJtUG"></a>
-### Plugin Upgrade
+1. Metabase后台->设置->升级，如果有新的升级包，系统会给与提示
+![Metabase升级提示](http://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereminder-websoft9.png)
 
+2. 点击“更新”按钮后，系统会跳转到Metabase官方的安装页面。
+3. 我们提供的部署包采用的是jar包安装模式，因此在安装页面我们选择“Custom install”模式，
+![Metabase升级提示](http://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-updatenotify-websoft9.png#align=left&display=inline&height=336&originHeight=336&originWidth=960&status=done&width=960)
+3. 下载Metabase.jar包后，上传到服务器 `/data/wwwroot/metabase`, 覆盖已有的同名文件
+![Metabase升级提示](http://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
 
-
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-updatelist-websoft9.png#align=left&display=inline&height=522&originHeight=522&originWidth=960&status=done&width=960)
-
-3. Click the "update" button and the system goes to "update" and wait patiently for the update
-4. When all updates are completed, the update list shows "all apps are up to date"
-
-> If there is a problem with the upgrade process, such as: unable to download the upgrade package/no read and write permissions, make sure that the network is connected/OwnCloud Directory has read and write permissions
-
-
-<a name="17e37f04"></a>
-#### Master Program Upgrade
-
-1. Once have upgrade message "OwnCloud" *** is available. Get more information on how to update.", you should upgrade it now
-1. Go to Admin->Setting->..，<br />
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-openupdater-websoft9.png#align=left&display=inline&height=678&originHeight=678&originWidth=960&status=done&width=960)
-1. Go to Updater<br />
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-updater-websoft9.png#align=left&display=inline&height=678&originHeight=678&originWidth=960&status=done&width=960)
-1. Click the button "Create a checkpoint" first
-1. Click the button "Start"
+4. 重新加载Metabase，升级成功

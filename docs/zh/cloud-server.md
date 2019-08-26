@@ -11,16 +11,15 @@
 
 对于连接云服务器来说，操作基本相同，下面详细说明：
 
-## 使用Command连接服务器
+## 使用命令行连接服务器
 
-Command（命令行）是Linux系统最基本的操作，为了简化命令行登录，主流的云厂商控制台都提供了网页版的在线SSH登录工具。
+命令行（Command）是Linux系统最基本的操作，为了简化命令行登录，主流的云厂商控制台都提供了网页版的在线SSH登录工具。
 
 找到服务器实例，点击 **命令行连接** 即可。
 
 > 如果您不习惯使用云平台的提供的在线SSH命令行工具，您可以下载SSH客户端工具（例如：[putty](https://putty.org/)），配置登录信息之后开始使用。
 
 命令行连接服务器之后，如下两个最常用的操作范例是需要掌握的：
-
 
 ### 获取数据库密码
 
@@ -53,15 +52,14 @@ SFTP是使用SSH协议的FTP模式，也称之为安全增强型的FTP。SFTP工
 
 ### 配置WinSCP
 
-1. 下载[WinSCP](https://winscp.net/) ，采用默认安装方式
-2. 启动WinSCP，新建一个连接
+1. 下载[WinSCP](https://winscp.net/) ，安装后，启动WinSCP并新建一个连接
 3. 根据云服务器的 **密码验证和秘钥对** 两种验证方式分别说明：
 
-   * 密码验证方式设置（最常见）
+   * 密码验证方式设置（最常见的方式）
    ![密码验证方式](http://libs.websoft9.com/Websoft9/DocsPicture/zh/winscp/winscp-newsite.png)
 
    * 秘钥对验证方式设置
-   [](https://cdn.nlark.com/yuque/0/2019/png/152462/1553166279560-c779d958-9c11-4cc2-a2a5-6f0c42ab0190.png#align=left&display=inline&height=775&name=image.png&originHeight=775&originWidth=960&size=59081&status=done&width=960)
+   ![秘钥对验证方式](http://libs.websoft9.com/Websoft9/DocsPicture/zh/winscp/winscp-secrets-websoft9.png)
 4. 验证方式设置好之后，点击"登录"
 5. 登录之后，系统提示您是否保存登录信息，选择"是"
 6. 成功连接后的界面
@@ -101,5 +99,6 @@ WinSCP是自带命令运行功能的，虽然命令功能仅限于运行非交�
 
 ## 安全组设置
 
-不同云平台的安全组设置有一定的差异，请选择您所需的平台查看相关文档
+不同云平台的安全组设置有一定的差异，因此我们提供了多个云平台相关文档供您参考：
 
+[Azure设置](http://www.websoft9.com)  | [AWS设置](http://www.websoft9.com) | [阿里云设置](http://www.websoft9.com)  |  [华为云设置](http://www.websoft9.com) | [腾讯云设置](http://www.websoft9.com)
