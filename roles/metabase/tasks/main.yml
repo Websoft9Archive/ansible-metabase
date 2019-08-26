@@ -24,22 +24,7 @@
     owner: metabase
     group: metabase
 
-- name: Set metabase config
-  template:
-    src: metabase.conf.jinja2
-    dest: /data/wwwroot/metabase/metabase.conf
 
-- name: Setting metabase service
-  copy:
-    src: metabase.service
-    dest: /lib/systemd/system/metabase.service
-
-- name: Start metabase
-  service:
-    name: metabase.service
-    state: started
-    enabled: yes
-  
 - name: Get MySQL root Default Password
   shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
   register: mysql_password 
@@ -58,8 +43,32 @@
       name: "{{metabase_db_user}}" 
       password: "{{metabase_db_password}}" 
       priv: '{{metabase_db_name}}.*:ALL'
-      host: localhost
 
+
+- name: Set metabase config
+  template:
+    src: metabase.conf.jinja2
+    dest: /data/wwwroot/metabase/metabase.conf
+    owner: metabase
+    group: metabase
+
+- name: Setting metabase service
+  copy:
+    src: metabase.service
+    dest: /lib/systemd/system/metabase.service
+
+- name: Restart metabase
+  service:
+    name: metabase.service
+    state: restarted
+    enabled: yes
+
+- name:  wait for metabase setup (about 5min)
+  wait_for:
+    port: 3000
+    delay: 300
+    timeout: 600
+  
 
 - name: set reverse porxy
   copy: 
