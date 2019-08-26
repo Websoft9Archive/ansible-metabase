@@ -7,20 +7,15 @@ Metabase部署包中不仅仅只有Metabase本身，还包含一序列支持Meta
 ### Metabase
 
 Metabase安装目录: /data/wwwroot/metabase  
-Metabase配置文件: ？
+Metabase配置文件: /data/wwwroot/metabase/metabase.conf
 
 > Metabase配置文件中包含数据库连接信息，更改了MySQL数据库账号密码，此处也需要对应修改
 
 ### Java
 Java Directory: /usr/lib/jvm
 
-### Tomcat
-Tomcat Configuration: /etc/tomcat8/
-Tomcat Logs: /var/log/tomcat8
-
-
 ### Nginx
-Nginx vhost configuration file: /etc/nginx/sites-available/default
+Nginx vhost configuration file: /etc/nginx/sites-available/default.conf
 Nginx configuaration file: /etc/nginx/nginx.conf
 Nginx logs file: /var/log/nginx/
 
@@ -29,10 +24,6 @@ Database install directory: /usr/local/mysql
 Database data directory: /data/mysql  
 Database Configuration File: /etc/my.cnf  
 MySQL Management URL: _http://Internet IP:9090
-
-### Redis
-Redis configuration file: _/etc/redis.conf_  
-Redis data directory: _/var/lib/redis_
 
 ## 端口号
 
@@ -50,11 +41,14 @@ Redis data directory: _/var/lib/redis_
 组件对应的基本版本号可以通过云市场商品页面查看，但部署到您的服务器之后，版本会有一定的升级，故更为精准的版本请通过在服务器上运行命令查看：
 
 ```shell
-# Tomcat version
-
+# metabase
+0.32.9
 # Nginx version
-
+1.16.1
 # MySQL version
-
+5.7.27
 # Java Version
+11.0.4
+# Docker Version
+19.03.1
 ```

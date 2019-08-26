@@ -47,7 +47,7 @@
 
   roles:
     - { role: common, tags: "common"}  
-    - {role: ubuntu-mysql, tags: "ubuntu-mysql"}
+    - { role: ubuntu-mysql, tags: "ubuntu-mysql"}
     - { role: nginx, tags: "nginx"}     
     - { role: metabase, tags: "metabase"}
     - { role: docker, tags: "docker"}
