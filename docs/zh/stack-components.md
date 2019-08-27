@@ -41,14 +41,12 @@ MySQL Management URL: _http://Internet IP:9090
 组件对应的基本版本号可以通过云市场商品页面查看，但部署到您的服务器之后，版本会有一定的升级，故更为精准的版本请通过在服务器上运行命令查看：
 
 ```shell
-# metabase
-0.32.9
 # Nginx version
-1.16.1
+nginx -v
 # MySQL version
-5.7.27
+mysql -V
 # Java Version
-11.0.4
+java --version
 # Docker Version
-19.03.1
+docker --version
 ```
