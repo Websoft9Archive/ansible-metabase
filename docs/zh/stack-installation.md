@@ -24,16 +24,16 @@
 ![Metabase安装成功](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-installss-websoft9.png)
 
 6. 以H2演示数据为例，开始数据分析工作
-![Metabase后台](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-dashborad-websoft9.png)
+![Metabase H2演示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-dashborad-websoft9.png)
 
-7. Metabase有强大的系统管理能力：后台->设置->管理员，进入系统管理界面
-![Metabase后台](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-admin-websoft9.png)
+7. Metabase有强大的系统管理能力：后台->设置，进入系统管理界面
+![Metabase Admin](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-admin-websoft9.png)
 
 8. 通过“添加一个数据库”来增加一个数据分析源
-![Metabase后台](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-adddb-websoft9.png)
+![Metabase 增加数据库](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-adddb-websoft9.png)
 
 9. 通过点击“人员管理”标签，管理使用Metabase用户，包括增加用户、修改密码等
-![Metabase后台](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-users-websoft9.png)
+![Metabase 人员管理](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-users-websoft9.png)
 
 > 需要了解更多Metabase的使用，请参考官方文档：[Metabase Documentation](https://metabase.com/docs/latest/)
 

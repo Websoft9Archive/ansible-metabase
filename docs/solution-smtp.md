@@ -17,6 +17,7 @@ Follow is the sample using **SendGrid's SMTP Service** to configure sending mail
    ```
 2. Log in Metabase Console
 3. Enter the SMTP settings
+![Metabase SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-smtp-websoft9.png)
 4. Click the **Test Connection**, you can get the feedback *"no errors were..."* if SMTP is useful
 
 More SMTP Service(Gmail, Hotmail, QQ mail, Yahoo mail, SendGrid and so on)  settings or Issues with SMTP, please refer to Websoft9's *[SMTP Guide](https://support.websoft9.com/docs/faq/tech-smtp.html)*
