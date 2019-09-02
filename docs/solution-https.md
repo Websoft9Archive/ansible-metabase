@@ -1,6 +1,6 @@
 # SSL/HTTPS
 
-Mattermost deployment package has installed the SSL module of Nginx and open Certificate Authority **[Let's Encrypt](https://letsencrypt.org/)** for you configure the HTTPS quickly and conveniently.
+Metabase deployment package has installed the SSL module of Nginx and open Certificate Authority **[Let's Encrypt](https://letsencrypt.org/)** for you configure the HTTPS quickly and conveniently.
 
 > In addition to the vhost configuration file, HTTPS settings do not need to modify any files in Nginx
 

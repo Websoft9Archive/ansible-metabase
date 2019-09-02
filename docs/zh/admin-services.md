@@ -1,14 +1,14 @@
 # 服务启停
 
-使用由Websoft9提供的Mattermost部署方案，可能需要用到的服务如下：
+使用由Websoft9提供的Metabase部署方案，可能需要用到的服务如下：
 
-### Mattermost
+### Metabase
 
 ```shell
-sudo systemctl start mattermost
-sudo systemctl stop mattermost
-sudo systemctl restart mattermost
-sudo systemctl status mattermost
+sudo systemctl start metabase
+sudo systemctl stop metabase
+sudo systemctl restart metabase
+sudo systemctl status metabase
 ```
 
 ### Nginx

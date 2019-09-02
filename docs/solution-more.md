@@ -11,7 +11,7 @@ Nonetheless, from the perspective of server security and subsequent maintenance 
 Metabase domain name binding steps:
 
 1. Connect your Cloud Server
-2. Modify [Nginx vhost configuration file](/stack-components.md#nginx), change the **server_name**'s value *mattermost.example.com* to your domain name
+2. Modify [Nginx vhost configuration file](/stack-components.md#nginx), change the **server_name**'s value *metabase.example.com* to your domain name
    ```text
    server {
       listen 80;

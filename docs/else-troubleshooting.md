@@ -1,6 +1,6 @@
 # Troubleshooting
 
-We collect the most common troubleshooting of using Mattermost for your reference:
+We collect the most common troubleshooting of using Metabase for your reference:
 
 ## Database related
 

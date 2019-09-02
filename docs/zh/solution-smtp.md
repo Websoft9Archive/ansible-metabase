@@ -4,7 +4,7 @@
 
 请勿尝试在服务器上安装sendmail等发邮件方案，因为邮件系统的路由配置受制与域名、防火墙、路由等多种因素制约，导致不稳定、不易维护、诊断故障困难。
 
-下面以**网易邮箱**为例，提供设置 Mattermost 发邮件的步骤：
+下面以**网易邮箱**为例，提供设置 Metabase 发邮件的步骤：
 
 1. 在网易邮箱管理控制台获取 SMTP 相关参数
    ```
@@ -15,8 +15,7 @@
    SMTP username: websoft9@163.com
    SMTP password: #wwBJ8    //此密码不是邮箱密码，是需要通过163邮箱后台设置去获取的授权码
    ```
-2. 登录 Mattermost控制台，打开【ENVIROMENT】>【SMTP】
-   ![设置smtp](https://libs.websoft9.com/Websoft9/DocsPicture/en/mattermost/mattermost-smtp-websoft9.png)
+2. 登录 Metabase控制台
 3. 填写 SMTP 参数
 4. 点击【Test Connection】
 

@@ -1,30 +1,19 @@
 # FAQ
 
-#### Mattermost 与 Slack 有什么区别？
+#### Metabase支持多语言吗？
 
-参考官方文档 [Mattermost vs Slack](https://mattermost.com/mattermost-vs-slack/)
+支持多语言（包含中文），系统默认根据浏览器自动选择语言 
 
-#### Mattermost提供客户端吗？
+#### Metabase数据库连接配置信息在哪里？
 
-提供，[下载地址](https://mattermost.com/download/#mattermostApps)
+数据库配置信息在Metabase安装目录下的 *metabase.conf* 中，[查阅安装目录路径](/zh/stack-components.md#metabase)
 
-#### Mattermost提供CLI工具吗？
-
-提供，参考[官网CLI文档](https://docs.mattermost.com/administration/command-line-tools.html#using-the-cli)
-
-#### Mattermost支持多语言吗？
-
-支持多语言（包含中文），可以登录控制台，通过【SITE CONFIGURATION】>【Localization】设置语言 
-
-#### Mattermost数据库连接配置信息在哪里？
-
-数据库配置信息在Mattermost安装目录下的config/config.json中，[查阅安装目录路径](/zh/stack-components.md#mattermost)
-
-#### 如果没有域名是否可以部署 Mattermost？
+#### 如果没有域名是否可以部署 Metabase？
 
 可以，访问`http://服务器公网IP` 即可
 
 #### 数据库 root 用户对应的密码是多少？
+
 密码存放在服务器相关文件中：`/credentials/password.txt`
 
 #### 是否有可视化的数据库管理工具？
@@ -35,16 +24,16 @@
 
 关闭服务器安全组的9090端口即可禁止
 
-#### 是否可以修改Mattermost的源码路径？
+#### 是否可以修改Metabase的源码路径？
 
 可以，通过修改 [Nginx 虚拟主机配置文件](/zh/stack-components.md)中相关参数
 
 #### 如何修改上传的文件权限?
 
 ```shell
-chown -R nginx.nginx /data/wwwroot
-find /data/wwwroot -type d -exec chmod 750 {} \;
-find /data/wwwroot -type f -exec chmod 640 {} \;
+chown -R nginx.nginx /data/wwwroot/metabase
+find /data/wwwroot/metabase -type d -exec chmod 750 {} \;
+find /data/wwwroot/metabase -type f -exec chmod 640 {} \;
 ```
 #### 部署和安装有什么区别？
 

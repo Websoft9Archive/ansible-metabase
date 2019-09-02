@@ -1,28 +1,16 @@
 # FAQ
 
-#### Mattermost VS Slack?
+#### Metabase support multi-language?
 
-Refer to [Mattermost vs Slack](https://mattermost.com/mattermost-vs-slack/)
+Yes
 
-#### Mattermost Mobile & Desktop Apps
+#### Where is the database connection configuration of Metabase?
 
-[Download it](https://mattermost.com/download/#mattermostApps)
+Database configuration information in *metabase.conf* in the Metabase installation directory, [refer to the installation directory](/stack-components.md#metabase)
 
-#### Mattermost have CLI tools?
+#### If there is no domain name, can I deploy Metabase?
 
-Yes, refer to [CLI Docs](https://docs.mattermost.com/administration/command-line-tools.html#using-the-cli)
-
-#### Mattermost support multi-language?
-
-Yes, log in the Mattermost console, set from **SITE CONFIGURATION** > **Localization** 
-
-#### Where is the database connection configuration of Mattermost?
-
-Database configuration information in *config/config.json* in the Mattermost installation directory, [refer to the installation directory](/stack-components.md#mattermost)
-
-#### If there is no domain name, can I deploy Mattermost?
-
-Yes, visit Mattermost by *http://Internet IP*
+Yes, visit Metabase by *http://Internet IP*
 
 #### What is the password for the database root user?
 
@@ -36,7 +24,7 @@ Yes, phpMyAdmin is on it, visit by http://Internet IP:9090
 
 Disable port 9090 of the server security group
 
-#### Is it possible to modify the source path of Mattermost?
+#### Is it possible to modify the source path of Metabase?
 
 Yes, modify it by [Nginx vhost configuration file](/stack-components.md)
 

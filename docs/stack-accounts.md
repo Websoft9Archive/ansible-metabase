@@ -1,10 +1,10 @@
 # Username and Password
 
-These accounts are required for Mattermost image installation and configuration
+These accounts are required for Metabase image installation and configuration
 
-## Mattermost
+## Metabase
 
-Administrator account is set by yourselft at the time of Mattermost installation wizard
+Administrator account is set by yourselft at the time of Metabase installation wizard
 
 ## MySQL
 

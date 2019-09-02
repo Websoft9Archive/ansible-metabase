@@ -1,11 +1,11 @@
 # 部署
 
-**部署就是将 Mattermost 预装包在线复制到你的云服务器中**。例如：用户在云平台购买 Mattermost 之后，云平台就会自动将 Mattermost 复制到对应的云服务器。
+**部署就是将 Metabase 预装包在线复制到你的云服务器中**。例如：用户在云平台购买 Metabase 之后，云平台就会自动将 Metabase 复制到对应的云服务器。
 
-- 如果已经部署 Mattermost，请进入[初始化安装](/zh/stack-installation.md) ，完成相关操作。
-- 如果没有部署 Mattermost，需要先将 Mattermost 部署到您的云服务器。
+- 如果已经部署 Metabase，请进入[初始化安装](/zh/stack-installation.md) ，完成相关操作。
+- 如果没有部署 Metabase，需要先将 Metabase 部署到您的云服务器。
 
-我们提供了两种部署 Mattermost 方案（部署结果是一样的）：
+我们提供了两种部署 Metabase 方案（部署结果是一样的）：
 
 ## 镜像部署
 
@@ -13,17 +13,17 @@
 
 对有云服务器使用经验的用户来说，镜像部署可以等同于“一键部署”。
 
-我们在主流的云平台上发布了 [Mattermost 镜像](https://apps.websoft9.com/mattermost)供用户使用。云平台一般支持三种镜像部署方式：
+我们在主流的云平台上发布了 [Metabase 镜像](https://apps.websoft9.com/metabase)供用户使用。云平台一般支持三种镜像部署方式：
 
-* 在 **选购新服务器** 的时候，找到并选取 Mattermost 镜像作为服务器启动环境
-* 在 **云市场（Marketplace）**  的 Mattermost 商品页面直接购买镜像
-* 对于已有服务器，通过 **更换镜像（重装系统）** 的操作，将已有镜像替换为 Mattermost 镜像。
+* 在 **选购新服务器** 的时候，找到并选取 Metabase 镜像作为服务器启动环境
+* 在 **云市场（Marketplace）**  的 Metabase 商品页面直接购买镜像
+* 对于已有服务器，通过 **更换镜像（重装系统）** 的操作，将已有镜像替换为 Metabase 镜像。
 
 ## 脚本部署
 
 **脚本部署**是指在云服务器上运行一段脚本程序，一边将预装包在线下载到云服务器，一边预配置
 
-我们在 Github上发布了 [Mattermost 自动化部署脚本](https://github.com/Websoft9/ansible-mattermost)，脚本基于 Ansible 编写。只要熟悉 Ansible，便可以实现无人值守的方式将 Metabase 部署到服务器。
+我们在 Github上发布了 [Metabase 自动化部署脚本](https://github.com/Websoft9/ansible-metabase)，脚本基于 Ansible 编写。只要熟悉 Ansible，便可以实现无人值守的方式将 Metabase 部署到服务器。
 
 ## 对比
 

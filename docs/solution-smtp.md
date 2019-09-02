@@ -1,10 +1,10 @@
 # SMTP
 
-Sending mail is a common feature for Mattermost. After a large number of user practice feedback, only one way is recommended, that is, using the **third-party STMP service** to send the email.
+Sending mail is a common feature for Metabase. After a large number of user practice feedback, only one way is recommended, that is, using the **third-party STMP service** to send the email.
 
 > Do not try to install **Sendmail** or other Mail server software on your Cloud Server for sending mail, because it is very difficulty in maintenance.
 
-Follow is the sample using **SendGrid's SMTP Service** to configure sending mail for Mattermost:
+Follow is the sample using **SendGrid's SMTP Service** to configure sending mail for Metabase:
 
 1. Log in SendGrid console, prepare your SMTP settings like the follow sample
    ```
@@ -15,8 +15,7 @@ Follow is the sample using **SendGrid's SMTP Service** to configure sending mail
    SMTP username: websoft9smpt
    SMTP password: #fdfwwBJ8f    
    ```
-2. Log in Mattermost Console, open **ENVIROMENT** > **SMTP**
-   ![Set smtp](https://libs.websoft9.com/Websoft9/DocsPicture/en/mattermost/mattermost-smtpsendgrid-websoft9.png)
+2. Log in Metabase Console
 3. Enter the SMTP settings
 4. Click the **Test Connection**, you can get the feedback *"no errors were..."* if SMTP is useful
 

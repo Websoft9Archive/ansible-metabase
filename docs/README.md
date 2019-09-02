@@ -4,11 +4,11 @@ home: false
 
 # Overview
 
-This documentation is provided by [Websoft9](https://www.websoft9.com/), it can help users to acquire skills of Mattermost Deployment, Installation, Configuration, HTTPS, SMTP, Backup, Upgrade, Connect Instance and more.
+This documentation is provided by [Websoft9](https://www.websoft9.com/), it can help users to acquire skills of Metabase Deployment, Installation, Configuration, HTTPS, SMTP, Backup, Upgrade, Connect Instance and more.
 
-[Mattermost](https://www.metabase.com/) is the easy, open source way for everyone in your company to ask questions and learn from data.
+[Metabase](https://www.metabase.com/) is the easy, open source way for everyone in your company to ask questions and learn from data.
 
-![](https://github.com/metabase/metabase/raw/master/docs/metabase-product-screenshot.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-product-screenshot.png)
 
 ---
 

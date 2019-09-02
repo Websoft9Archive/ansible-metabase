@@ -1,25 +1,23 @@
 # 参数
 
-Mattermost 预装包包含 Mattermost 运行所需一序列支撑软件（简称为“组件”），下面列出主要组件名称、安装路径、配置文件地址、端口、版本等重要的信息。
+Metabase 预装包包含 Metabase 运行所需一序列支撑软件（简称为“组件”），下面列出主要组件名称、安装路径、配置文件地址、端口、版本等重要的信息。
 
 ## 路径
 
-### Mattermost
+### Metabase
 
-Mattermost 安装目录： */opt/mattermost/*  
-Mattermost 配置文件： */opt/mattermost/config/config.json*  
-Mattermost 数据目录： */opt/mattermost/data*  
-Mattermost 日志目录： */opt/mattermost/logs*
+Metabase 安装目录： */data/wwwroot/metabase*  
+Metabase 配置文件： */data/wwwroot/metabase/metabase.conf*  
 
 > Metabase 配置文件中包含数据库连接信息，更改了 MySQL 数据库账号密码，此处也需要对应修改
 
-### Go
+### Java
 
-Mattermost 使用 Go 语言开发，镜像默认支持 Go 程序部署
+Java Directory: */usr/lib/jvm*
 
 ### Nginx
 
-Nginx 虚拟主机配置文件：*/etc/nginx/conf.d/default.conf*  
+Nginx 虚拟主机配置文件：*/etc/nginx/sites-available/default.conf*  
 Nginx 主配置文件： */etc/nginx/nginx.conf*  
 Nginx 日志文件： */var/log/nginx/*
 
@@ -47,9 +45,8 @@ MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密�
 组件版本号可以通过云市场商品页面查看。但部署到您的服务器之后，组件会自动进行更新导致版本号有一定的变化，故精准的版本号请通过在服务器上运行命令查看：
 
 ```shell
-# mattermost version
-cd /opt/mattermost/bin
-./mattermost version
+# Java Version
+java --version
 
 # Nginx version:
 nginx -v
