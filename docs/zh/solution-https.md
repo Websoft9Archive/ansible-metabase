@@ -1,88 +1,34 @@
-# HTTPS访问
+# SSL/HTTPS
 
-Websoft9 OwnCloud(LAMP) have enabled the Nginx SSL module, you just need to add the HTTPS profile to vhost configuration file .Before setting up HTTPS access, please open port 443 of the security group. if not, HTTPS access is not available.
+网站完成域名绑定且可以通过HTTP访问之后，方可设置HTTPS。
 
-Here are two configuration schemes for HTTPS, please choose according to the actual situation:
+Mattermost预装包，已安装Web服务器 SSL 模块和公共免费证书方案 [Let's Encrypt](https://letsencrypt.org/) ，并完成预配置。
 
-<a name="f7f3b410"></a>
-## Configuration Method 1: Using your own certificate
+> 除了虚拟主机配置文件之外，HTTPS设置无需修改Nginx任何文件
 
-If you have already applied for a certificate (please ensure that the certificate is available), please refer to the following configuration:
+## 简易步骤
 
-1. Upload the certificate to the certificate Directory: _/data/cert_ (no cert directory can be created by yourself)
-1. Copy the HTTPS profile template below into the _`vhost.conf`_ file and save
-```shell
-<VirtualHost *:443>
-ServerName  www.mydomain.com
-DocumentRoot "/data/wwwroot/owncloud"
-#ErrorLog "logs/www.mydomain.com-error_log"
-#CustomLog "logs/www.mydomain.com-access_log" common
-<Directory "/data/wwwroot/owncloud">
-Options Indexes FollowSymlinks
-AllowOverride All
-Require all granted
-</Directory>
-SSLEngine on
-SSLCertificateFile  /data/cert/www.mydomain.com.crt
-SSLCertificateKeyFile  /data/cert/www.mydomain.com.key
-SSLCertificateChainFile  /data/cert/root_bundle.crt
-</VirtualHost>
-```
+如果你想使用免费证书，只需在服务器中运行一条命令`certbot`就可以启动证书部署
 
-3. Modify the related items in the configuration file and save
-| **Items** | **Description** |
-| --- | --- |
-| ServerName | Primary domain |
-| DocumentRoot | The real website storage directory |
-| Directory | The real website storage directory |
-| ErrorLog | error logs directory |
-| CustomLog | visit logs directory |
-| SSLCertificateFile | SSLCertificateFile directory, suffix name is .crt or .pem |
-| SSLCertificateKeyFile  | SSLCertificateKeyFile directory, suffix name is .key |
-| SSLCertificateChainFile  | SSLCertificateChainFile  directory, suffix name is .cer |
+如果你已经申请了商业证书，只需三个步骤，即可完成HTTPS配置
 
-> The incorrect directory will cause the service to fail to restart, view the ErroLog to troubleshoot
+1. 将申请的证书、 证书链文件和秘钥文件上传到 */data/cert* 目录
+2. 打开虚拟主机配置文件：*/etc/nginx/conf.d/default.conf* ，插入**HTTPS 配置段** 到 *server{ }* 中
+ ``` text
+   #-----HTTPS template start------------
+   listen 443 ssl; 
+   ssl_certificate /data/cert/xxx.crt;
+   ssl_certificate_key /data/cert/xxx.key;
+   ssl_session_timeout 5m;
+   ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+   ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+   ssl_prefer_server_ciphers on;
+   #-----HTTPS template end------------
+   ```
+3. 重启Nginx服务
 
+## 专题指南
 
-3. Restart HTTP Services
-```shell
-#~ systemctl restart httpd
-```
+若参考上面的**简易步骤**仍无法成功设置HTTPS访问，请阅读由Websoft9提供的 [《HTTPS 专题指南》](https://support.websoft9.com/docs/faq/zh/tech-https.html#nginx)
 
-
-<a name="f09ba4e3"></a>
-## Configuration Method 2: Using Let's Encrypt
-
-You can use the free SSL/TLS Certificate [Let's Encrypt](https://letsencrypt.org/) in this Image, Let's Encrypt is a free, automated, and open Certificate Authority.
-
-Before using Let's Encrypt Certificate for your site, you should make sure that your site have already bound to the domain name, it's means that the ServerName parameter have correct domain in HTTP profile template.<br />E.g. The domain of your site is test.websoft9.cn, here are the steps to configure the HTTPS:
-
-1. Start up the Let's Encrypt configuration just need one command
-```shell
-certbot
-```
-
-2. Enter the corresponding content according to the prompt
-> You can select multiple domain by the method 1,2 when come to the step "Which names would you like to activate HTTPS for?"
-
-
-
-3. After the above steps are completed, certbot will automatically configure the certificate to the directory _/etc/letsencrypt/live/_
-
-4. Visit the HTTPS to confirm you have configured successfully
-
----
-
-
-<a name="FAQ"></a>
-## FAQ
-
-<a name="aa9423d7"></a>
-### Note on the application of the certificate
-
-- domain.com is a wildcard domain name method and cannot be used to apply for a free certificate
-- When applying for a certificate, please resolve the domain name first. some certificates will bind the IP address corresponding to the domain name, that is, the IP address cannot be replaced once applied, otherwise the certificate will not be available
-
-<a name="cb873aa0"></a>
-### Why is the setup successful, showing "the connection established with this site is not completely secure "?
-If https can be visited, you can make sure that your HTTPS settings are successful, just because there are static files containing http access, or external links, etc. in the website, the browser alarms that your website is not completely safe.
+HTTPS专题指南方案包括：HTTPS前置条件、HTTPS 配置段模板、注意事项、详细步骤以及故障诊断等具体方案。

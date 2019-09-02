@@ -1,31 +1,38 @@
 # Start or Stop the Services
 
-These commands you must know when you using the OwnCloud Image
+These commands you must know when you using the Metabase of Websoft9
 
-<a name="Apache"></a>
-### Apache
+### Metabase
 
 ```shell
-sudo systemctl start httpd
-sudo systemctl stop httpd
-sudo systemctl restart httpd
+sudo systemctl start metabase
+sudo systemctl stop metabase
+sudo systemctl restart metabase
+sudo systemctl status metabase
 ```
 
-<a name="MySQL"></a>
+### Nginx
+
+```shell
+sudo systemctl start nginx
+sudo systemctl stop nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx
+```
+
 ### MySQL
 
 ```shell
-sudo systemctl start mysqld
-sudo systemctl stop mysqld
-sudo systemctl restart mysqld
+sudo systemctl start mysql
+sudo systemctl stop mysql
+sudo systemctl restart mysql
+sudo systemctl status mysql
 ```
 
-<a name="Redis"></a>
-### Redis
-
+### Docker
 ```shell
-sudo systemctl start redis
-sudo systemctl stop redis
-sudo systemctl restart redis
+sudo systemctl star docker
+sudo systemctl stop docker
+sudo systemctl restart docker
+sudo systemctl status docker
 ```
-

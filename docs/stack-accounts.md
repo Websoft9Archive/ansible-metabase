@@ -1,23 +1,29 @@
-# Administrator Usernames and Passwords
+# Username and Password
 
-These accounts are required for Image Stack installation and configuration
+These accounts are required for Mattermost image installation and configuration
 
-<a name="OwnCloud"></a>
-## OwnCloud
-Administrator account is set by yourselft at the time of OwnCloud installation wizard
+## Mattermost
 
-<a name="MySQL"></a>
+Administrator account is set by yourselft at the time of Mattermost installation wizard
+
 ## MySQL
-Administrator username:	_root_<br />Administrator password:	_the password is stored in the file of your Cloud Server Instance_<br />Web interface Management URL：_http:// Internet IP/phpmyadmin_
 
-> Using SFTP to connect to Instance,you can get the mysql password from /credentials/password.txt 
+* Administrator username: *`root`*
+* Administrator password: stored in the file of your server instance: */credentials/password.txt*. You use the **online SSH interface on Cloud Console** and run the command `cat /credentials/password.txt` to get the database password
+   ![Run the cat command](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
 
-<br />
-<a name="Linux"></a>
+> If you want to log in MySQL, refer to [MySQL Web interface Management](/admin-mysql.md)
+
 ## Linux
 
-Host Name:_ Internet IP address of your Instance_<br />Connect it: Use SFTP or SSH tools<br />Username: Cloud platform has differences<br />- For Azure, the username is _`set by yourself`_<br />- For AWS, the username is `_centos_`<br />- For AlibabaCloud and HUAWEI CLOUD, the username is `_root_`
+* Host Name: Internet IP or Public IP of your Instance
+* Connect by: Online SSH on Cloud Console or SFTP/SSH tools on your local computer
+* Password: It was set by yourself when created instance
+* Username: Different Cloud Platform has differences
+   |  Cloud Platform   |  Administrator Username   |
+   | --- | --- |
+   |  Azure   |  It was set by yourself when created instance   |
+   |  AWS   |  ubuntu   |
+   |  Alibaba Cloud, HUAWEI CLOUD, Tencent Cloud |  root   |
 
-> If you do not remember the password of the Cloud Server Instance, log in to the cloud console, modify the Instance password, and take effect after restarting.
-
-
+If don't remember the password of Linux, you should reset password on Cloud Console

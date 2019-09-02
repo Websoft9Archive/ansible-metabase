@@ -1,47 +1,41 @@
-# Upgrade
+# Update & Upgrade
 
-The complete upgrade of this Image includes: Operating System patch upgrade, Running Environment patch vulnerability upgrade and OwnCloud upgrade three parts
+Updates and upgrades are one of the maintenance tasks for sytem. Programs that are not upgraded for a long time, like buildings that are not maintained for a long time, will accelerate aging and gradually lose functionality until they are unavailable.
 
-> Website technology is changing with each passing day. Updates and upgrades are one of the maintenance tasks. Programs that are not upgraded for a long time, like buildings that are not maintained for a long time, will accelerate aging and gradually lose functionality until they are unavailable.
+You should know the differences between the terms **Update** and **Upgrade**([Extended reading](https://support.websoft9.com/docs/faq/tech-upgrade.html#update-vs-upgrade))
+- Operating system patching is **Update**, Ubuntu16.04 to Ubuntu18.04 is **Upgrade**
+- MySQL5.6.25 to MySQL5.6.30 is **Update**, MySQL5.6 to MySQL5.7 is **Upgrade**
 
+For Metabase maintenance, focus on the following two Update & Upgrade jobs
 
-Start any upgrade,you should complete the backup first
+- Sytem update(Operating System and Running Environment) 
+- Metabase upgrade 
 
-<a name="88cf1437"></a>
-## Operating System &  running environmen Upgrade
+## System Update
 
-If you are using the Zentao on Linux Image of us,upgrade is very simple,just only one command
-```shell
+Run an update command to complete the system update:
+
+``` shell
+#For Ubuntu
+apt update && apt upgrade -y
+
+#For Centos&Redhat
 yum update -y
 ```
+> This deployment package is preconfigured with a scheduled task for automatic updates. If you want to remove the automatic update, please delete the corresponding Cron
 
-<a name="18a6c2f4"></a>
-## OwnCloud Upgrade
+## Metabase Upgrade
 
-OwnCloud provides a very user-friendly upgrade (update) portal, which can complete the update of the main version and APP plug-in according to the update prompt of the system.
+Metabase有升级包的时候，后台会及时给出提示。参考下面的步骤完成升级：
 
-<a name="VJtUG"></a>
-### Plugin Upgrade
+1. Metabase后台->设置->升级，如果有新的升级包，系统会给与提示
+![Metabase升级提示](http://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereminder-websoft9.png)
 
+2. 点击“更新”按钮后，系统会跳转到Metabase官方的安装页面。
+3. 我们提供的部署包采用的是jar包安装模式，因此在安装页面我们选择“Custom install”模式，
+![Metabase升级提示](http://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-updatenotify-websoft9.png#align=left&display=inline&height=336&originHeight=336&originWidth=960&status=done&width=960)
+3. 下载Metabase.jar包后，上传到服务器 `/data/wwwroot/metabase`, 覆盖已有的同名文件
+![Metabase升级提示](http://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
 
-
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-updatelist-websoft9.png#align=left&display=inline&height=522&originHeight=522&originWidth=960&status=done&width=960)
-
-3. Click the "update" button and the system goes to "update" and wait patiently for the update
-4. When all updates are completed, the update list shows "all apps are up to date"
-
-> If there is a problem with the upgrade process, such as: unable to download the upgrade package/no read and write permissions, make sure that the network is connected/OwnCloud Directory has read and write permissions
-
-
-<a name="17e37f04"></a>
-#### Master Program Upgrade
-
-1. Once have upgrade message "OwnCloud" *** is available. Get more information on how to update.", you should upgrade it now
-1. Go to Admin->Setting->..，<br />
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-openupdater-websoft9.png#align=left&display=inline&height=678&originHeight=678&originWidth=960&status=done&width=960)
-1. Go to Updater<br />
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/owncloud/owncloud-updater-websoft9.png#align=left&display=inline&height=678&originHeight=678&originWidth=960&status=done&width=960)
-1. Click the button "Create a checkpoint" first
-1. Click the button "Start"
+4. 重新加载Metabase，升级成功

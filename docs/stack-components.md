@@ -1,34 +1,57 @@
-# List Included Components
+# Parameters
 
-The OwnCloud Stack ships the components listed below. If you want to know which specific version of each component is bundled in the stack you are installing, check the Image introduction page of marketplace. You can also find more information about each component using the links below.
+The Metabase deployment package contains a sequence software (referred to as "components") required for Metabase to run. The important information such as the component name, installation directory path, configuration file path, port, version, etc. are listed below.
 
-You can view the version of components from our [OwnCloud Repository](https://github.com/Websoft9/ansible-phpapps/blob/master/roles/owncloud/readme.txt) on Github
+## Path
 
-<a name="OwnCloud"></a>
-## OwnCloud
-OwnCloud Directory: _/data/wwwroot/owncloud_<br />OwnCloud configuration :_ /data/wwwroot/owncloud/config/config.php_<br />_
-> This config file was saved database configuration in the installation. You can change this file later.
+### Metabase
 
+Metabase installation directory: */data/wwwroot/metabase*  
+Metabase configuration file: */data/wwwroot/metabase/metabase.conf*  
 
-<a name="PHP"></a>
-## PHP
-PHP Configuration File: _/etc/php.ini_<br />PHP Modules Configuration Directory: _/etc/php.d_
+### Java
 
-<a name="APACHE"></a>
-## APACHE
-Apache Vhost Configuration File: _/etc/httpd/conf.d/vhost.conf_<br />Apache Configuration directory: _/etc/httpd/conf.d_<br />Apache Log Files: _/var/log/httpd_
+Java Directory: */usr/lib/jvm*
 
-<a name="MYSQL"></a>
-## MYSQL
-Database install directory: /usr/local/mysql<br />Database data directory: /data/mysql<br />Database Configuration File: /etc/my.cnf<br />MySQL Management URL: _http://Internet IP/phpmyadmin_<br />_
-<a name="Redis"></a>
-## Redis
-Redis configuration file: _/etc/redis.conf_<br />Redis data directory: _/var/lib/redis_
+### Nginx
 
-<a name="Port"></a>
-## Port
-| MySQL | 3306 |
-| --- | --- |
-| Apache | 80,443 |
+Nginx vhost configuration file: */etc/nginx/sites-available/default.conf*  
+Nginx main configuration file: */etc/nginx/nginx.conf*  
+Nginx logs file: */var/log/nginx/*
+
+### MYSQL
+
+MySQL installation directory: */usr/local/mysql*  
+MySQL data directory: */data/mysql*  
+MySQL configuration file: */etc/my.cnf*    
+MySQL Web Management URL: *http://Internet IP:9090*, get credential from [Username and Password](/stack-accounts.md)
 
 
+## Ports
+
+These Ports is need when use Metabase, refer to [Safe Group Setting on Cloud Console](https://support.websoft9.com/docs/faq/tech-instance.html)
+
+| Name | Number | Use |  Necessity |
+| --- | --- | --- | --- |
+| MySQL | 3306 | Remote connect MySQL | Optional |
+| HTTP | 80 | HTTP requests for Metabase | Required |
+| HTTPS | 443 | HTTPS requests Metabase | Optional |
+| phpMyAdmin on Docker | 9090 | Web managment GUI for MySQL | Optional |
+
+## Version
+
+You can see the version from product page of Marketplace. However, after being deployed to your server, the components will be automatically updated, resulting in a certain change in the version number. Therefore, the exact version number should be viewed by running the command on the server:
+
+```shell
+# Java Version
+java --version
+
+# Nginx version:
+nginx -v
+
+# MySQL version:
+mysql -V
+
+# Dokcer:
+docker --version
+```

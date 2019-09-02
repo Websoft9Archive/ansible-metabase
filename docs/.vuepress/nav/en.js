@@ -1,4 +1,4 @@
 module.exports = [
           { text: 'Home', link: '/' },
-          { text: 'Support', link: 'http://support.websoft9.com' },
+          { text: 'Support', link: 'https://support.websoft9.com' },
       ]

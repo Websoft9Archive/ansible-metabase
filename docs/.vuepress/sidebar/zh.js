@@ -8,30 +8,30 @@ module.exports = [
       '/zh/stack-installation',
       '/zh/stack-components',
       '/zh/stack-accounts',
-      '/zh/cloud-server',
+      ['https://support.websoft9.com/docs/faq/zh/tech-instance.html','云服务器'],
     ]
   },
   
   {
-    title: '最佳实践',
+    title: '实践指南',
     collapsable: false,
     children: [
       '/zh/solution-smtp',
       '/zh/solution-https',
-      '/zh/solution-dns',
       '/zh/solution-backup',
       '/zh/solution-upgrade',
-      '/zh/solution-migration',
+      '/zh/solution-more',
     ]
   },
   
   {
-    title: '管理指南',
+    title: '配置参考',
     collapsable: false,
     children: [
       '/zh/admin-services',
       '/zh/admin-mysql',
-      '/zh/admin-linux',
+      ['https://support.websoft9.com/docs/linux/zh/webs-nginx.html','Nginx'],
+      ['https://support.websoft9.com/docs/linux/zh/admin-practices.html','Linux'],
     ]
   },
   
@@ -39,8 +39,8 @@ module.exports = [
     title: '其他',
     collapsable: false,
     children: [
-      '/zh/faq',
-      '/zh/troubleshooting',
+      '/zh/else-faq',
+      '/zh/else-troubleshooting',
     ]
   },
   

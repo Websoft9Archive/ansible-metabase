@@ -13,13 +13,13 @@ head: [
 locales: {
     '/': {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
-      title: 'Metabase Image Guide',
-      description: 'You can get the Installation of Image,Administrator,Configuration of the OwnCloud from this documentation.'
+      title: 'Metabase Administrator Guide',
+      description: 'You can get the Installation of Image,Administrator,Configuration of the Metabase from this documentation.'
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'Metabase 镜像手册',
-      description: 'You can get the Installation of Image,Administrator,Configuration of the OwnCloud from this documentation.'
+      title: 'Metabase 管理员手册',
+      description: '本文档由 Websoft9 公司提供，用于指导用户学习 Metabase 的安装部署与基本运维技术，包括：部署、初始化安装、环境配置、HTTPS、SMTP、备份升级和连接云服务器操作等基本操作。'
     }
 },
 

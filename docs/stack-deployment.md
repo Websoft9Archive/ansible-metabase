@@ -1,29 +1,32 @@
-# Get the Images
+# Deployment
 
-If you have not used Images of Websoft9 before,below steps you should know
+**Deployment is to copy the Metabase pre-packaged online to your Cloud Server**. For example, after the user subscribe Metabase on the Cloud Platform, the Platform will automatically copy the Metabase to the corresponding Cloud Server.
 
-<a name="731fe0d0"></a>
-## Find Image
+- If Metabase has been deployed, go to [Initial Installation](/zh/stack-installation.md) to complete the operation.
+- If Metabase is not deployed, you need to deploy Metabase to your cloud server first.
 
-Visit the Images URL of Websoft9 to get more information,and make sure what do you want to use
+We offer two deployment Metabase scenarios (the deployment results are the same):
 
-| Image Name | Image URL |
-| :--- | :--- |
-| OwnCloud (LAMP) |  |
+## Deploy by Image
 
-<a name="700dd9d8"></a>
-## Subscribe Image
+**Deploy by Image** means starting instance from Metabase images. **Metabase Image** provide OS and software environment needed for Metabase.
 
-Image stacks is the useful components for Cloud Server on public cloud,Websoft9 already released 200+ Images stack on the MarketPlace of mainstream Cloud Computing Vendors or Public Cloud
+For users with experience with cloud servers, Deploy by Image equated with "one-click deployment".
 
-<a name="22dd26a9"></a>
-## Verify Image
+Websoft9 published [Metabase image](https://apps.websoft9.com/metabase) on Cloud Platform, three methods for your deployment:
 
-After the submit of Image,please verify it to check if it is installed correctly
+* When **Create New Instance** , select the Metabase image as the system boot template.
+* When **Subscribe Metabase** on Marketplace, the system will promote you to create a new instance for this image at the same time.
+* When **Re-install OS** for you instance, you can replace the existing image with a Metabase image.
 
-1. Login on Public Cloud console,get you Internet IP Address
-1. Using you local Chrome or Firefox to visit **_http://Internet IP:80  _**and you can enter the Image boot page directly,if there no response from browser,please check the Security Group settings to ensure that **Port 80** is been allowed in you Security Group settings
-1. Connect Cloud Server to check the **List Included Components**
+## Deploy by Script
 
-> Most of the time the **port** is 80,and you only need to visit **_http://Internet IP _**to check it
+**Deploy by Script** means running a script on your cloud instance to pull the pre-packages online to your instance and configure it at the same time.
 
+Websoft9 provide the [Metabase ansbile automation script](https://github.com/Websoft9/ansible-metabase) on Github. If you are familiar with Ansible, you can deploy the Metabase to the instance automaticly.
+
+## Comparison
+
+Although the results of the **deploy by image** are consistent with the results of **deploy by script**, what is the difference between the two deployment methods?
+
+Suggest you read the document [Deploy by Image vs Deploy by Script](https://support.websoft9.com/docs/faq/bz-product.html#deployment-comparison)

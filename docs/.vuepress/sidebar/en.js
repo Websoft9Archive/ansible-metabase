@@ -8,39 +8,38 @@ module.exports = [
           '/stack-installation',
           '/stack-components',
           '/stack-accounts',
-          '/cloud-server',
+          ['https://support.websoft9.com/docs/faq/tech-instance.html','Cloud Server'],
         ]
       },
-  
       {
         title: 'Best Practices',
         collapsable: false,
         children: [
           '/solution-smtp',
           '/solution-https',
-          '/solution-dns',
           '/solution-backup',
           '/solution-upgrade',
-          '/solution-migration',
+          '/solution-more',
         ]
       },
-  
+      
       {
         title: 'Administrator',
         collapsable: false,
         children: [
           '/admin-services',
           '/admin-mysql',
-          '/admin-linux',
+          ['https://support.websoft9.com/docs/linux/webs-nginx.html','Nginx'],
+          ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
         ]
       },
-  
+      
       {
         title: 'Other',
         collapsable: false,
         children: [
-          '/faq',
-          '/troubleshooting',
+          '/else-faq',
+          '/else-troubleshooting',
         ]
       },
       
