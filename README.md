@@ -6,7 +6,7 @@
 
 ## 如何保证最新版本？
 
-Metabase通过下载地址安装，此变量存在 `/roles/metabase/tasks/main.yml`文件中。
+Metabase通过下载地址安装，此变量存在 `/roles/metabase/tasks/main.yml`文件中。通过修改url地址来实现最新版本。
 
 ```
 - name: Download metabase
