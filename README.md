@@ -1,4 +1,4 @@
-# Mattermost自动化安装与部署
+# Metabase自动化安装与部署
 
 ## 操作系统
 
@@ -18,4 +18,4 @@
 
 ## 使用指南
 
-[中文](https://support.websoft9.com/docs/mattermost/zh) | [英文](https://support.websoft9.com/docs/mattermost)
+[中文](https://support.websoft9.com/docs/metabase/zh) | [English](https://support.websoft9.com/docs/metabase)
