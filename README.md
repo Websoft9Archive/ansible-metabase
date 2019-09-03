@@ -21,6 +21,7 @@ Metabase通过下载地址安装，此变量存在 `/roles/metabase/tasks/main.y
 
 ## 安装指南
 
+本项目是一个完整的Ansible项目  
 支持root用户、普通用户（+su权限提升）等两种账号模式，也支持密码和秘钥对登录方式。
 
 ## 使用指南
