@@ -10,7 +10,7 @@
 
 ## Metabase 安装向导
 
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：http://domain name 或 http://Internet IP, 就进入了软件的引导首页
+1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入了软件的引导首页
 ![Metabase初始化页面](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-start-websoft9.png)
 
 2. 软件的加载速度比较慢，耐心等待1-3分钟，直至出现如下的界面。
