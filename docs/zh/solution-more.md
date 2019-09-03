@@ -11,7 +11,7 @@
 Metabase 域名绑定操作步骤：
 
 1. 登录云服务器
-2. 修改 [Nginx虚拟机主机配置文件](/zh/stack-components.md#nginx)，将其中的域名项的值 *metabase.example.com* 修改为你的域名
+2. 修改 [Nginx虚拟机主机配置文件](/zh/stack-components.md#nginx)，将其中的 **server_name** 项的值 *metabase.example.com* 修改为你的域名
    ```text
    server {
       listen 80;
