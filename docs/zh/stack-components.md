@@ -35,9 +35,9 @@ MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| MySQL | 3306 | 远程连接MySQL | 可选 |
 | HTTP | 80 | 通过http访问Metabase | 必须 |
 | HTTPS | 443 | 通过https访问Metabase | 可选 |
+| MySQL | 3306 | 远程连接MySQL | 可选 |
 | phpMyAdmin on Docker | 9090 | 可视化管理MySQL | 可选 |
 
 ## 版本号
