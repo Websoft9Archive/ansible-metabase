@@ -31,12 +31,14 @@ MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密�
 
 ## 端口号
 
-下面是您在使用本镜像过程中，需要用到的端口号，请通过 [云控制台安全组](https://support.websoft9.com/docs/faq/zh/tech-instance.html)进行设置
+系统所用到的端口号，请通过官方文档 [Package defaults](https://docs.gitlab.com/omnibus/package-information/defaults.html) 查阅。在云服务器中，通过 **[安全组设置](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** 来控制（开启或关闭）端口是否可以被外部访问。 
+
+本应用建议开启的端口如下：
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| HTTP | 80 | 通过http访问Metabase | 必须 |
-| HTTPS | 443 | 通过https访问Metabase | 可选 |
+| HTTP | 80 | 通过http访问GitLab | 必须 |
+| HTTPS | 443 | 通过https访问GitLab | 可选 |
 | MySQL | 3306 | 远程连接MySQL | 可选 |
 | phpMyAdmin on Docker | 9090 | 可视化管理MySQL | 可选 |
 
@@ -45,6 +47,9 @@ MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密�
 组件版本号可以通过云市场商品页面查看。但部署到您的服务器之后，组件会自动进行更新导致版本号有一定的变化，故精准的版本号请通过在服务器上运行命令查看：
 
 ```shell
+# Linux Version
+lsb_release -a
+
 # Java Version
 java --version
 

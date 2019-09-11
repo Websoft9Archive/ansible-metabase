@@ -29,7 +29,9 @@ MySQL Web Management URL: *http://Internet IP:9090*, get credential from [Usern
 
 ## Ports
 
-These Ports is need when use Metabase, refer to [Safe Group Setting on Cloud Console](https://support.websoft9.com/docs/faq/tech-instance.html)
+You can view all the used ports from the official docs [Package defaults](https://docs.gitlab.com/omnibus/package-information/defaults.html) . You can control(open or shut down) ports by **[Security Group Setting](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** of your Cloud Server whether the port can be accessed from Internet.
+
+These ports should be opened for this application:
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
@@ -43,6 +45,9 @@ These Ports is need when use Metabase, refer to [Safe Group Setting on Cloud Con
 You can see the version from product page of Marketplace. However, after being deployed to your server, the components will be automatically updated, resulting in a certain change in the version number. Therefore, the exact version number should be viewed by running the command on the server:
 
 ```shell
+# Linux Version
+lsb_release -a
+
 # Java Version
 java --version
 
