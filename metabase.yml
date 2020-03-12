@@ -1,28 +1,22 @@
-# # 服务器前置任务(ubuntu使用)
+# 核心任务
 - name: metabase
   hosts: all
   become: yes
   become_method: sudo
-  gather_facts: False
-  pre_tasks:
-   - name: Install Python
-     raw: sudo apt update && sudo apt-get -y install python
 
-
-# # 核心任务
-
-- name: metabase
-  hosts: all
-  become: yes
-  become_method: sudo
+  vars_files:
+    - vars/main.yml
 
   roles:
-    - { role: common, tags: "common"}  
-    - { role: ubuntu-mysql, tags: "ubuntu-mysql"}
-    - { role: nginx, tags: "nginx"}     
-    - { role: metabase, tags: "metabase"}
-    - { role: docker, tags: "docker"}
-    - { role: docker_phpmyadmin, tags: "docker_phpmyadmin"}
+   - {role: role_common, tags: "role_common"}   
+   - {role: role_cloud, tags: "role_cloud"}
+   - {role: role_mysql, tags: "role_mysql"}
+   - {role: role_docker, tags: "role_docker", when: phpmyadmin_install_docker}
+   - {role: role_docker_phpmyadmin, tags: "role_docker_phpmyadmin", when: phpmyadmin_install_docker}
+   - {role: metabase, tags: "metabase"}
+   - {role: role_init_password, tags: "role_init_password"}
+   - {role: role_preend, tags: "role_preend"}
+   - {role: role_end, tags: "role_end"} 
 
 
 
