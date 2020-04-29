@@ -6,7 +6,7 @@ Metabase预装包，已安装Web服务器 SSL 模块和公共免费证书方案 
 
 > 除了虚拟主机配置文件之外，HTTPS设置无需修改Nginx任何文件
 
-## 简易步骤
+## 快速参考
 
 如果你想使用免费证书，只需在服务器中运行一条命令`certbot`就可以启动证书部署
 
@@ -27,7 +27,7 @@ Metabase预装包，已安装Web服务器 SSL 模块和公共免费证书方案 
    ```
 3. 重启Nginx服务
 
-## 专题指南
+## 详细指南
 
 若参考上面的**简易步骤**仍无法成功设置HTTPS访问，请阅读由Websoft9提供的 [《HTTPS 专题指南》](https://support.websoft9.com/docs/faq/zh/tech-https.html#nginx)
 

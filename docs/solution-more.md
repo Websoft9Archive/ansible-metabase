@@ -4,9 +4,9 @@ Each of the following solutions has been proven to be effective and we hope to b
 
 ## Domain binding
 
-The precondition for binding a domain is that Metabase can accessed by domain name.
+The precondition for **Domain binding** is have completed the **Domain resolution** for Metabase Instance.
 
-Nonetheless, from the perspective of server security and subsequent maintenance considerations, the **Domain Binding** step cannot be omitted.
+From the perspective of server security and subsequent maintenance considerations, the **Domain Binding** step cannot be omitted.
 
 Metabase domain name binding steps:
 

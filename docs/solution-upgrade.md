@@ -16,11 +16,11 @@ For Metabase maintenance, focus on the following two Update & Upgrade jobs
 Run an update command to complete the system update:
 
 ``` shell
-#For Ubuntu
-apt update && apt upgrade -y
-
 #For Centos&Redhat
 yum update -y
+
+#For Ubuntu&Debian
+apt update && apt upgrade -y
 ```
 > This deployment package is preconfigured with a scheduled task for automatic updates. If you want to remove the automatic update, please delete the corresponding Cron
 

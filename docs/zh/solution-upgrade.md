@@ -13,11 +13,11 @@ Metabase 完整的更新升级包括：系统级更新（操作系统和运行�
 运行一条更新命令，即可完成系统级更新：
 
 ``` shell
-#For Ubuntu
-apt update && apt upgrade -y
-
 #For Centos&Redhat
 yum update -y
+
+#For Ubuntu&Debian
+apt update && apt upgrade -y
 ```
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
 

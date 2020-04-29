@@ -37,10 +37,10 @@ MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| HTTP | 80 | 通过http访问GitLab | 必须 |
-| HTTPS | 443 | 通过https访问GitLab | 可选 |
-| MySQL | 3306 | 远程连接MySQL | 可选 |
-| phpMyAdmin on Docker | 9090 | 可视化管理MySQL | 可选 |
+| HTTP | 80 | 通过 HTTP 访问 Odoo | 必须 |
+| HTTPS | 443 | 通过 HTTPS 访问 Odoo | 可选 |
+| MySQL | 3306 | 远程连接 MySQL | 可选 |
+| phpMyAdmin on Docker | 9090 | 可视化管理 MySQL | 可选 |
 
 ## 版本号
 
