@@ -73,24 +73,6 @@ firewall-cmd --reload
 
 本项目安装后无服务
 
-备注：如果开机没有服务，程序无法运行的情况下，需要自行编写服务
-
-服务的模板如下：
-
-```
-[Unit]
-Description=Redmine
-After=nginx.service
-[Service]
-Environment=RAILS_ENV=production
-Type=simple
-WorkingDirectory=/data/wwwroot/redmine
-ExecStart=/usr/local/bin/puma -b tcp://127.0.0.1:9292 -e production 
-User=redmine
-[Install]
-WantedBy=multi-user.target
-```
-
 ## 环境变量
 JAVA_HOME   JRE_HOME  CLASSPATH     PATH
 
