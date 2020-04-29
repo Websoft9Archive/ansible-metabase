@@ -1,10 +1,17 @@
 #全局
 region: "0"
 
-# MySQL 版本和默认密码
+jdk_version: "11" 
+
+preend_certbot: True
+nginx_reverse_proxy_port: "3000"
+
+# role_mysql
 mysql_version: "5.7"       
 mysql_root_password: "123456"
+mysql_remote: True
 
+# docker
 docker_applications: 'phpmyadmin'
 
 # 生成应用数据库和用户

@@ -1,5 +1,1 @@
-metabase_db_name: metabase
-metabase_db_user: metabase
-metabase_db_password: "123456"
-
-metabase_download_url: "http://downloads.metabase.com/v0.32.9/metabase.jar"
+metabase_download_url: "https://downloads.metabase.com/v0.35.3/metabase.jar"

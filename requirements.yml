@@ -4,6 +4,9 @@
 - src: http://github.com/websoft9dev/role_cloud
   version: master
 
+- src: http://github.com/websoft9dev/role_jdk
+  version: master
+
 - src: http://github.com/websoft9dev/role_mysql
   version: master
 
@@ -11,9 +14,6 @@
   version: master
 
 - src: http://github.com/websoft9dev/role_docker
-  version: master
-
-- src: http://github.com/websoft9dev/role_docker_phpmyadmin
   version: master
 
 - src: http://github.com/websoft9dev/role_init_password
