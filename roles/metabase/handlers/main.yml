@@ -1,7 +1,3 @@
-- name: check_metabase_version
-  debug:
-    var: check_metabase_version.stdout
-    
 - name: check_metabase_service
   debug:
     var: check_metabase_service.stdout
