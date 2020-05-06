@@ -56,9 +56,7 @@
 
 # display version and service state of components
 - name: Get metabase version
-  shell: echo "no check version method now"
-  register: check_metabase_version
-  notify: check_metabase_version
+  shell: sudo sh -c "echo 'no check version method for Metabase now' 1>> /data/logs/install_version.txt"
 
 - name: Check metabase Service
   shell: systemctl status metabase | grep Active*
