@@ -4,10 +4,6 @@
 
 - include: "{{ansible_os_family}}.yml"
 
-# pre-configuration
-- set_fact:
-    chanzhi_vhost_dir: "{{php_runtime_meta[ansible_os_family][phpapps_webs].vhost_dir}}"
-
 # configure Metabase
 
 - name: Create metabase User
