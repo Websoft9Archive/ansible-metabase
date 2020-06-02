@@ -1,12 +1,6 @@
 #全局
 region: "0"
 
-# metabase variable
-
-metabase_db_name: metabase
-metabase_db_user: metabase
-metabase_db_password: "123456"
-
 # role_jdk
 jdk_version: "11" 
 
