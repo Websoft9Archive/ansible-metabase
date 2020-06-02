@@ -31,5 +31,6 @@ init_db:
       admin: root
       users: ["metabase"]
       password: "123456"  
+      service_before: metabase
       config_paths:
       - /data/wwwroot/metabase/metabase.conf
