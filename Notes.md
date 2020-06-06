@@ -65,6 +65,36 @@ firewall-cmd --reload
 安装完成后，完成如下配置
 
 ```shell
+安装完成后，完成如下配置
+
+```shell
+#创建 metabase用户和配置metabase所需文件
+   sudo groupadd -r metabase
+   sudo useradd -r -s /bin/false -g metabase metabase
+   sudo chown -R metabase:metabase </your/path/to/metabase/directory>
+   sudo touch /var/log/metabase.log
+   sudo chown metabase:metabase /var/log/metabase.log
+   sudo touch /etc/default/metabase
+   sudo chmod 640 /etc/default/metabase
+
+#配置metabase日志文件  
+sudo touch /etc/rsyslog.d/metabase.conf
+if $programname == 'metabase' then /var/log/metabase.log
+& stop
+
+#环境变量配置  /etc/default/metabase
+MB_PASSWORD_COMPLEXITY=<weak|normal|strong>
+MB_PASSWORD_LENGTH=<10>
+MB_JETTY_HOST=<0.0.0.0>
+MB_JETTY_PORT=<12345>
+MB_DB_TYPE=<postgres|mysql|h2>
+MB_DB_DBNAME=<your_metabase_db_name>
+MB_DB_PORT=<5432>
+MB_DB_USER=<your_metabase_db_user>
+MB_DB_PASS=<ssshhhh>
+MB_DB_HOST=<localhost>
+MB_EMOJI_IN_LOGS=<true|false>
+# any other env vars you want available to Metabase
 
 
 ```
