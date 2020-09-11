@@ -1,4 +1,4 @@
-metabase_download_url: "https://downloads.metabase.com/v0.35.4/metabase.jar"
+metabase_download_url: "https://downloads.metabase.com/v0.36.4/metabase.jar"
 
 metabase_db_name: metabase
 metabase_db_user: metabase
