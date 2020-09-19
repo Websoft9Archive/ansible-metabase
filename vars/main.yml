@@ -6,6 +6,8 @@ common_os_support: ["CentOS", "Ubuntu", "Amazon"]
 jdk_version: "11" 
 
 nginx_certbot: True
+nginx_appname: "metabase"
+nginx_vhost_mode: "reverse"
 nginx_reverse_proxy_port: "3000"
 
 # role_mysql
