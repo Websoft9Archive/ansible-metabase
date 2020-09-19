@@ -24,7 +24,6 @@ mysql_databases:
  
 mysql_users:
  - name: metabase
-   host: localhost
    priv: 'metabase.*:ALL'
 
 # 初始化MySQL root密码
