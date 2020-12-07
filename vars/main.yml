@@ -18,7 +18,7 @@ mysql_remote: True
 # docker
 docker_applications: 
   - phpmyadmin
-
+  
 # 生成应用数据库和用户
 mysql_databases:
  - name: metabase
