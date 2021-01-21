@@ -1,14 +1,16 @@
 [Unit]
 Description=Metabase applicaion service
 Documentation=https://www.metabase.com/docs/latest
+After=syslog.target
+After=network.target
 
 [Service]
-WorkingDirectory=/data/wwwroot/metabase
 EnvironmentFile=/data/wwwroot/metabase/metabase.conf
-ExecStart=/usr/bin/java -jar metabase.jar
 User=metabase
 Group=metabase
 Type=simple
+ExecStart=/usr/bin/java -jar /data/wwwroot/metabase/metabase.jar
+Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=metabase
