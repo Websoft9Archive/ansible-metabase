@@ -1,6 +1,8 @@
+common_install_docker: True
 
+docker_install: False
 
-
+docker_applications: [phpmyadmin]
 
 init_docker:
   metabase:
