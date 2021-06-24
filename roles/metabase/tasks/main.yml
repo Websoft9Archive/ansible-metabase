@@ -1,0 +1,57 @@
+- name: Delete metabase dir for sec_installation
+  shell: rm -rf {{metabase_work_dir}}
+
+- name: Clone metabase in Websoft9 
+  git:
+    repo: "{{metabase_git_url}}"
+    dest: "{{metabase_work_dir}}"
+    version: dev
+
+- name: Create dir for metabase
+  file: 
+    state: directory
+    path: "{{item}}"
+  loop: 
+    - '{{metabase_work_dir}}/volumes'
+    - /data/db/mysql
+
+- name: Rename compose and env filename
+  shell: |
+    rm -rf docker-compose.yml
+    [ -f docker-compose-production-{{metabase_version}}.yml ] && mv docker-compose-production-{{metabase_version}}.yml docker-compose.yml
+    [ -f .env_all ] && mv .env_all .env
+  args:
+    chdir: '{{metabase_work_dir}}'
+    
+- name: Run docker-compose 
+  shell: | 
+    docker-compose up -d
+    sleep 30
+  args:
+    chdir: '{{metabase_work_dir}}'
+
+- name: Set soft link for metabase
+  file:
+    src: '{{item.src}}'
+    dest: '{{item.dest}}'
+    state: link
+    force: yes
+  with_items:
+  - {src: '{{metabase_work_dir}}/volumes/mysql/data/',dest: /data/db/mysql/data}
+  - {src: '{{metabase_work_dir}}/volumes/mysql/config/',dest: /data/config/mysql}
+  - {src: '{{metabase_work_dir}}/volumes/mysql/config/',dest: /data/db/mysql/config}
+
+# check service and version
+- name: Check metabase service 
+  shell: >
+    docker ps -a |awk '{print $2,$7}'
+  register: check_metabase_service
+  notify: check_metabase_service
+    
+- name: Check metabase version
+  shell: |
+    sudo echo "metabase version:" $(docker images |grep metabase |cut -d- -f4) |sudo tee -a /data/logs/install_version.txt  
+    
+- name: Check mysql version
+  shell: |
+    sudo echo "mysql version:" $(docker inspect metabase-mysql |grep -i mysql_version |cut -d= -f2) |sudo tee -a /data/logs/install_version.txt  
