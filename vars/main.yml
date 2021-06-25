@@ -6,7 +6,7 @@ docker_applications: [phpmyadmin]
 
 init_docker:
   metabase:
-    db: root
+    db: mysql
     db_name: metabase
     db_username: root
     db_password: "123456"
