@@ -5,10 +5,10 @@ These commands you must know when you using the Metabase of Websoft9
 ### Metabase
 
 ```shell
-sudo systemctl start metabase
-sudo systemctl stop metabase
-sudo systemctl restart metabase
-sudo systemctl status metabase
+sudo docker start metabase
+sudo docker stop metabase
+sudo docker restart metabase
+sudo docker status metabase
 ```
 
 ### Nginx
@@ -23,10 +23,12 @@ sudo systemctl status nginx
 ### MySQL
 
 ```shell
-sudo systemctl start mysql
-sudo systemctl stop mysql
-sudo systemctl restart mysql
-sudo systemctl status mysql
+sudo docker start metabase-mysql
+sudo docker stop metabase-mysql
+sudo docker restart metabase-mysql
+sudo docker status metabase-mysql
+```
+
 ```
 
 ### Docker
