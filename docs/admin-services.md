@@ -29,8 +29,6 @@ sudo docker restart metabase-mysql
 sudo docker status metabase-mysql
 ```
 
-```
-
 ### Docker
 ```shell
 sudo systemctl star docker
