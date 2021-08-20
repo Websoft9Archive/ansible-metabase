@@ -1,0 +1,18 @@
+{
+  "name": "metabase",
+  "trademark": "Metabase",
+  "official_url": "https://www.metabase.com/",
+  "support_os": "CentOS7.x, Ubuntu20.04, Amazon Linux2",
+  "requirements_cpu": "1",
+  "requirements_memory": "1",
+  "requirements_Bandwidth": "100",
+  "requirements_disk": "20",
+  "requirements_swap": "2",
+  "requirements_configure_url": "https://www.metabase.com/docs/latest/operations-guide/installing-metabase.html",
+  "components": "Metabase, Java, Nginx, MYSQL",
+  "install_way": {
+    "en": "Docker isntallation",
+    "zh": "Docker 安装"
+  },
+  "install_url": "https://www.rabbitmq.com/download.html"
+}
