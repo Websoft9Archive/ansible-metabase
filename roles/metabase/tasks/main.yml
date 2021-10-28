@@ -16,6 +16,12 @@
     src: config.json
     dest: /opt/config.json
     
+- name: Template setup_password.py to /opt/
+
+  template:
+    src: setup_password.py
+    dest: /opt/setup_password.py
+    
 - name: Create dir for metabase
   file: 
     state: directory
