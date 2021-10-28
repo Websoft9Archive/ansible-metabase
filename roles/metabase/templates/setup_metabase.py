@@ -107,12 +107,13 @@ def check_health(base_url:str,port:str):
 if __name__=="__main__":
     config=parse_config_file()
 
-    subprocess.run(["docker-compose","-f","/data/wwwroot/metabase/docker-compose.yml","up","-d","--no-recreate"])
     while check_health(base_url=config["url"],port=config["port"])!=200:
         time.sleep(2)
         subprocess.Popen(["sleep","2"])
     setup_token=get_setup_token(config["url"],config["port"])
     status_code=0;
+    password_file=open("./password.txt")
+    password=password_file.readline()
     while status_code!=200:
         status_code=register(
         url=config["url"],
@@ -124,7 +125,7 @@ if __name__=="__main__":
         allow_tracking=config["allow_tracking"],
         first_name=config["first_name"],
         last_name=config["last_name"],
-        password=sys.argv[1],
+        password=password,
         )
         time.sleep(2)
         subprocess.Popen(["sleep","2"])
