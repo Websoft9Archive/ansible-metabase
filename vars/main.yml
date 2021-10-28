@@ -22,6 +22,7 @@ init_docker:
       - cd /opt
       - pip install requests 
       - sudo python3 ./setup_metabase.py
+   
     volumes:
       - /data/wwwroot/metabase/volumes
       
