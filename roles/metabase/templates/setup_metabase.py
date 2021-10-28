@@ -102,8 +102,8 @@ def check_health(base_url:str,port:str):
 if __name__=="__main__":
     config=parse_config_file()
     while check_health(base_url=config["url"],port=config["port"])!=200:
-        time.sleep(2)
         subprocess.Popen(["sleep","2"])
+         time.sleep(2)
     setup_token=get_setup_token(config["url"],config["port"])
     status_code=0;
     while status_code!=200:
@@ -119,8 +119,8 @@ if __name__=="__main__":
         last_name=config["last_name"],
         password=sys.argv[1],
         )
-        time.sleep(2)
         subprocess.Popen(["sleep","2"])
+        time.sleep(2)
 
 
 
