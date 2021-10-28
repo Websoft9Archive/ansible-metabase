@@ -106,9 +106,11 @@ def check_health(base_url:str,port:str):
     return session.get(url=base_url+":"+port+"/api/health").status_code
 if __name__=="__main__":
     config=parse_config_file()
+
+    subprocess.run(["docker-compose","-f","/data/wwwroot/metabase/docker-compose.yml","up","-d","--no-recreate"])
     while check_health(base_url=config["url"],port=config["port"])!=200:
         time.sleep(2)
-        #subprocess.Popen(["sleep","2"])
+        subprocess.Popen(["sleep","2"])
     setup_token=get_setup_token(config["url"],config["port"])
     status_code=0;
     while status_code!=200:
