@@ -3,7 +3,7 @@
     "port":"9001",
     "email":"{{metabase_default_email}}",
     "site_name":"websoft9",
-    "site_locale":"zh",
+    "site_locale":"en",
     "allow_tracking":true,
     "first_name":"web",
     "last_name":"soft9"
