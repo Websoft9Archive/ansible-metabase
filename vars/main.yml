@@ -31,6 +31,6 @@ init_application:
     password: "123456"
     commands: 
       - cd /opt
-      - python3 set_password.py
+      - python3 setup_password.py $new_password
       
       
