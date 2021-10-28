@@ -5,7 +5,17 @@
   git:
     repo: "{{metabase_git_url}}"
     dest: "{{metabase_work_dir}}"
-
+    
+- name: Template setup_metabase.py to /opt/
+  template:
+    src: setup_metabase.py
+    dest:/opt/setup_metabase.py
+    
+- name: Template setup_metabase.py to /opt/
+  template:
+    src: config.json
+    dest:/opt/config.json
+    
 - name: Create dir for metabase
   file: 
     state: directory
