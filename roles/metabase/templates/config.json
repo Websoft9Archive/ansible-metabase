@@ -1,7 +1,7 @@
 {
     "url":"http://localhost",
     "port":"9001",
-    "email":{{metabase_default_email}},
+    "email":"{{metabase_default_email}}",
     "site_name":"websoft9",
     "site_locale":"zh",
     "allow_tracking":true,
