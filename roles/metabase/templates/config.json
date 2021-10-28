@@ -1,11 +1,11 @@
 {
-    "url":"http://43.129.161.203",
+    "url":"http://localhost",
     "port":"9001",
-    "email":"test@gmail.com",
-    "site_name":"test",
+    "email":{{metabase_default_email}},
+    "site_name":"websoft9",
     "site_locale":"zh",
     "allow_tracking":true,
-    "first_name":"杨",
-    "last_name":"彪"
+    "first_name":"web",
+    "last_name":"soft9"
 
 }
