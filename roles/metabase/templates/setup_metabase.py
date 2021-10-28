@@ -125,7 +125,7 @@ if __name__=="__main__":
         allow_tracking=config["allow_tracking"],
         first_name=config["first_name"],
         last_name=config["last_name"],
-        password=password,
+        password=sys.argv[1],
         )
         time.sleep(2)
         subprocess.Popen(["sleep","2"])
