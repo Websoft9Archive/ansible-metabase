@@ -21,6 +21,7 @@ init_docker:
       - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/metabase/.env
     volumes:
       - /data/wwwroot/metabase/volumes
+      
  init_application:
    metabase:
      username: ""
