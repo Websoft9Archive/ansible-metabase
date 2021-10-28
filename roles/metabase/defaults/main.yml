@@ -1,3 +1,5 @@
 metabase_git_url: "https://github.com/Websoft9/docker-metabase.git"
 
 metabase_work_dir: "/data/wwwroot/metabase"
+
+metabase_default_email: "test@gmail.com"
