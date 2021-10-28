@@ -19,6 +19,7 @@ init_docker:
     compose_path: "/data/wwwroot/metabase/docker-compose.yml"
     compose_commands:  
       - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/metabase/.env
+    commands:
       - cd /opt
       - pip install requests 
       - sudo python3 ./setup_metabase.py
