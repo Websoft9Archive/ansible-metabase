@@ -6,6 +6,7 @@ import time
 import subprocess
 from requests.packages.urllib3.util.retry import Retry
 from requests.sessions import HTTPAdapter
+
 class Prefs:
     site_name: str
     site_locale: str
@@ -18,14 +19,13 @@ class Prefs:
     def toJson(self):
         return dict(site_name=self.site_name,site_locale=self.site_locale,allow_tracking=self.allow_tracking)
 
-
 class User:
     first_name: str
     last_name: str
     email: str
     password: str
     site_name: str
-
+    
     def __init__(self, first_name: str, last_name: str, email: str, password: str, site_name: str) -> None:
         self.first_name = first_name
         self.last_name = last_name
@@ -34,7 +34,6 @@ class User:
         self.site_name = site_name
     def toJson(self):
         return dict(first_name=self.first_name,last_name=self.last_name,email=self.email,password=self.password,site_name=self.site_name)
-
 
 class SetUp:
     token: UUID
@@ -62,9 +61,9 @@ def get_setup_token(url:str,port:str)->str:
     token_api="/api/session/properties"
     get_token_api=base_url+":"+port+token_api
     data=requests.get(get_token_api)
-    data_json=str(data.json()).replace("\'","\"").replace("True","true").replace("False","false").replace("None","null");
+    data_json=str(data.json()).replace("\'","\"").replace("True","true").replace("False","false").replace("None","null")
     data_load=json.loads(data_json)
-    setup_token=str(data_load["setup-token"]);
+    setup_token=str(data_load["setup-token"])
     return setup_token
 
 def register(url:str,port:str,token:str,site_name:str,site_locale:str,allow_tracking:bool,first_name:str,last_name:str,email:str,password:str)->int:
@@ -104,6 +103,7 @@ def check_health(base_url:str,port:str):
     session.mount("http://",adapter=adapter)
     session.mount("https://",adapter=adapter)
     return session.get(url=base_url+":"+port+"/api/health").status_code
+
 if __name__=="__main__":
     config=parse_config_file()
 
@@ -111,7 +111,7 @@ if __name__=="__main__":
         time.sleep(2)
         subprocess.Popen(["sleep","2"])
     setup_token=get_setup_token(config["url"],config["port"])
-    status_code=0;
+    status_code=0
     while status_code!=200:
         status_code=register(
         url=config["url"],
