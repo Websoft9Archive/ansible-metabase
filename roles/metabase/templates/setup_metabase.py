@@ -7,6 +7,8 @@ import subprocess
 from requests.packages.urllib3.util.retry import Retry
 from requests.sessions import HTTPAdapter
 
+
+
 class Prefs:
     site_name: str
     site_locale: str
