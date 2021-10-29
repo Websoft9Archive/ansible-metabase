@@ -112,8 +112,6 @@ if __name__=="__main__":
         subprocess.Popen(["sleep","2"])
     setup_token=get_setup_token(config["url"],config["port"])
     status_code=0;
-    password_file=open("./password.txt")
-    password=password_file.readline()
     while status_code!=200:
         status_code=register(
         url=config["url"],
