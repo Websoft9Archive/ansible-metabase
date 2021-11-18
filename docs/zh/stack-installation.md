@@ -11,7 +11,7 @@
 ## Metabase 安装向导
 
 1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*，进入登陆页面（如果页面不是登陆页面，请按照步骤3-7操作）
-![Metabase登陆界面](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-start-websoft9.png)
+![Metabase登陆界面](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-login-websoft9.png)
 
 2. 输入邮件地址和密码[（不知道密码？）](/zh/stack-accounts.md)，登录到 Metabase 后台管理界面
 ![Metabase后台](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-dashborad-websoft9.png)
