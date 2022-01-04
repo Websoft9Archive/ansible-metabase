@@ -24,7 +24,8 @@ init_docker:
       - pip install requests 
       - sudo python3 ./setup_metabase.py $new_password
       - rm -rf ./setup_metabase.py
-      - rm -rf ./config.json 
+      - rm -rf ./config.json
+      - docker restart metabase
     volumes:
       - /data/wwwroot/metabase/volumes
       
