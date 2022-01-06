@@ -19,17 +19,14 @@ init_docker:
     compose_path: "/data/wwwroot/metabase/docker-compose.yml"
     compose_commands:  
       - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/metabase/.env
-    commands:
-      - cd /opt
-      - pip install requests 
-      - sudo python3 ./setup_metabase.py $new_password
-      - rm -rf ./setup_metabase.py
-      - rm -rf ./config.json
-      - docker restart metabase
     volumes:
       - /data/wwwroot/metabase/volumes
       
 init_application:
   metabase:
-    username: "test@gmail.com"
-    password: "123456"     
+    username: "admin@metabase.local"
+    password: "123456" 
+    commands:
+      - cd /opt
+      - chmod +x create_users.sh 
+      - MB_HOSTNAME=localhost MB_PORT=9001 MB_ADMIN_PASSWORD=$new_password ./create_users.sh
