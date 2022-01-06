@@ -1,5 +1,5 @@
 #!/bin/sh
-# refer to: https://www.metabase.com/learn/administration/serialization#add-users-to-our-metabase-origin-environment
+# copy from: https://www.metabase.com/learn/administration/serialization#add-users-to-our-metabase-origin-environment
 
 ADMIN_EMAIL=${MB_ADMIN_EMAIL:-admin@metabase.local}
 ADMIN_PASSWORD=${MB_ADMIN_PASSWORD:-Metapass123}
