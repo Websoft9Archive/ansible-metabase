@@ -6,7 +6,7 @@
     repo: "{{metabase_git_url}}"
     dest: "{{metabase_work_dir}}"
     
-- name: Template setup_metabase.py to /opt/
+- name: Template create_users.sh to /opt/
   template:
     src: create_users.sh
     dest: /opt/create_users.sh
