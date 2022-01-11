@@ -26,7 +26,7 @@ init_docker:
     commands:
       - sudo systemctl stop nginx
       - sudo systemctl start firewalld
-      - sudo firewall-cmd --zone=internal --add-port=3306/tcp --permanent
+      - sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
       - sudo firewall-cmd --reload
       - cd /opt
       - chmod +x create_users.sh 
