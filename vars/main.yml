@@ -25,11 +25,7 @@ init_docker:
       - /data/wwwroot/metabase/volumes
     commands:
       - sudo systemctl stop nginx
-      - sudo systemctl start firewalld
-      - sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
-      - sudo firewall-cmd --reload
       - cd /opt
       - chmod +x create_users.sh 
       - MB_HOSTNAME=localhost MB_PORT=9001 MB_ADMIN_PASSWORD=$new_password ./create_users.sh
-      - sudo systemctl stop firewalld
       - sudo systemctl start nginx
