@@ -27,3 +27,4 @@ init_docker:
       - cd /opt
       - chmod +x create_users.sh 
       - MB_HOSTNAME=localhost MB_PORT=9001 MB_ADMIN_PASSWORD=$new_password ./create_users.sh
+      - curl http://localhost
