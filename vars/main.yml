@@ -26,8 +26,6 @@ init_docker:
     commands:
       - sudo systemctl stop nginx
       - sudo systemctl start firewalld
-      - firewall-cmd --zone=public --remove-port=9001/tcp --permanent
-      - firewall-cmd --reload
       - cd /opt
       - chmod +x create_users.sh 
       - MB_HOSTNAME=localhost MB_PORT=9001 MB_ADMIN_PASSWORD=$new_password ./create_users.sh
